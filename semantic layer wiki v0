@@ -1,0 +1,105 @@
+## ServiceNow Reports and KPIs - Semantic Documentation Wiki
+
+### 1. Purpose and Scope
+**Goal:**
+This wiki serves as a centralized repository for documenting the definitions, criteria, and calculations of ServiceNow reports, KPIs, and measures. By maintaining standardized definitions, we ensure consistency, accuracy, and trust in the data across all teams.
+
+**Scope:**
+Initially, this documentation covers high-impact reports and KPIs used in ServiceNow, with a focus on:
+- Incident Management
+- SLA Performance
+- Change Management
+- Business Impact Metrics
+
+Future expansions will incorporate additional domains and automation integration.
+
+---
+
+### 2. Glossary of Terms
+
+| **Term** | **Definition** |
+|----------|--------------|
+| **Incident** | A request submitted to IT to report an issue affecting business operations. |
+| **Request** | A formal user request for information, access, or system changes. |
+| **First Response Time (FRT)** | The elapsed time between ticket creation and the first response from IT support. |
+| **Resolution Time** | The total time taken from ticket creation to final resolution. |
+| **SLA (Service Level Agreement)** | A commitment that defines response and resolution times for different types of issues. |
+| **Priority** | The impact and urgency level assigned to an incident or request. |
+| **Assignment Group** | The designated team responsible for handling a specific type of issue. |
+
+---
+
+### 3. Report Definitions
+
+#### **Incident Overview Report**
+- **Purpose:** Provides a summary of all incidents over a selected timeframe.
+- **Criteria:**
+  - Incident Status: Open, Closed, Resolved
+  - Date Range: User-defined selection (e.g., last 30 days)
+  - Group By: Assignment Group, Priority
+- **Key Metrics:**
+  - Number of Incidents
+  - Average Resolution Time
+  - SLA Compliance Percentage
+- **ServiceNow Link:** [Incident Overview Report](#)
+
+#### **SLA Performance Report**
+- **Purpose:** Tracks compliance with SLA targets for incident resolution.
+- **Criteria:**
+  - Incidents with defined SLAs
+  - Exclude incidents pending user response
+  - Calculate percentage met vs. breached
+- **Key Metrics:**
+  - SLA Compliance Rate (%)
+  - Average Resolution Time
+- **ServiceNow Link:** [SLA Performance Report](#)
+
+#### **Change Management Report**
+- **Purpose:** Monitors the status and approval trends of change requests.
+- **Criteria:**
+  - Change Type: Normal, Emergency, Standard
+  - Change Status: New, Approved, Rejected, Implemented
+  - Group By: Assignment Group, Application Impact
+- **Key Metrics:**
+  - Number of Changes Submitted
+  - Approval Rate (%)
+  - Percentage of Emergency Changes
+- **ServiceNow Link:** [Change Management Report](#)
+
+---
+
+### 4. Business Logic & Calculation Examples
+
+#### **First Response Time (FRT) Calculation**
+- **Definition:** Measures the elapsed time from when a ticket is created until the first agent response.
+- **Formula:**
+  - `FRT = (First Response Timestamp - Ticket Creation Timestamp)`
+- **Exclusions:**
+  - Auto-generated responses are excluded.
+  - Business hours considerations (if applicable) should be accounted for.
+- **Example:**
+  - If a ticket was created at 9:00 AM and the first response was logged at 9:30 AM, the FRT is 30 minutes.
+
+#### **SLA Compliance Rate Calculation**
+- **Definition:** The percentage of tickets resolved within the SLA-defined resolution time.
+- **Formula:**
+  - `SLA Compliance Rate (%) = (Number of tickets resolved within SLA / Total tickets with SLA) * 100`
+- **Example:**
+  - If 80 out of 100 incidents met their SLA targets, the SLA Compliance Rate is 80%.
+
+#### **Change Approval Rate Calculation**
+- **Definition:** Measures the percentage of submitted changes that received approval.
+- **Formula:**
+  - `Approval Rate (%) = (Number of Approved Changes / Total Submitted Changes) * 100`
+- **Example:**
+  - If 50 out of 70 change requests were approved, the Approval Rate is 71.4%.
+
+---
+
+### Next Steps
+- **Governance:** A bi-weekly review meeting will be scheduled to validate definitions and update documentation.
+- **Feedback Loop:** Users can submit recommendations and report inconsistencies using the [Feedback Form](#).
+- **Expansion Plan:** Additional reports and KPIs will be incorporated based on business needs and data availability.
+
+For further details, reach out to the ServiceNow Reporting Team or refer to the Confluence Guidelines on data documentation standards.
+
